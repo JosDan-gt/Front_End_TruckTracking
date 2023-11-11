@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Conductores · Truck Tracking</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+        crossorigin="anonymous"></script>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="../css/normalize.css">
+
+
+
+</head>
+
+<body>
+
+    <main class="d-flex flex-nowrap">
+        <h1 class="visually-hidden">Sidebars examples</h1>
+
+        <input class="checkbox" type="checkbox">
+        <i class="icons fi-br-menu-burger"></i>
+        <i class="icons fi fi-br-cross"></i>
+
+
+        <div class="dashboard-container flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <img src="../assets/icons/lg123.ico" class="bi pe-none me-2" width="40" height="32">
+                <span class="truck fs-4">Truck Tracking</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link text-white" aria-current="page">
+                        <img src="../assets/icons/home.png" width="20" height="20">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="conductor.html" class="nav-link active">
+                        <img src="../assets/icons/piloto-automatico.png" width="20" height="20">
+                        Conductores
+                    </a>
+                </li>
+                <li>
+                    <a href="camiones.html" class="nav-link text-white">
+                        <img src="../assets/icons/camion.png" width="20" height="20">
+                        Camiones
+                    </a>
+                </li>
+                <li>
+                    <a href="ubicacion.html" class="nav-link text-white">
+                        <img src="../assets/icons/ubicacion.png" width="20" height="20">
+                        Ubicaciones
+                    </a>
+                </li>
+            </ul>
+            <hr>
+
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../assets/icons/usuario1.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong id="userL">mdo</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    
+                    <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesion</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="b-example-divider b-example-vr"></div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <header class="main">
+                        <div
+                            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="name">Conductores</h1>
+                            <div class="btn-toolbar mb-2 mb-md-0">
+
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <div class="col-12 modal-right text-end">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#agregarEmpleado"
+                        class="btn btn-primary">Agregar</button>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Apellido</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">DPI</th>
+                                            <th scope="col">Fecha Nac</th>
+                                            <th scope="col">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="verConductores">
+                                        <tr>
+                                            <td scope="row">{{id}}</td>
+                                            <td>{{Nombre}}</td>
+                                            <td>{{Apellido}}</td>
+                                            <td>{{Correo}}</td>
+                                            <td>{{DPI}}</td>
+                                            <td>{{Fecha Nac}}</td>
+                                            <td>{{Acciones}}</td>
+                                        </tr>
+                                        <!-- Puedes agregar más filas de datos aquí -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modEmpleado" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modEmpleadoLabel">Actualizar Conductor</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombreEmpleadoMod" class="form-label">Nombre</label>
+                                <input id="nombreEmpleadoMod" type="text" class="form-control">
+
+                                <label for="apellidoEmpleadoMod" class="form-label">Apellido</label>
+                                <input id="apellidoEmpleadoMod" type="text" class="form-control">
+
+                                <label for="CorreoEmpleadoMod" class="form-label">Correo electrónico</label>
+                                <input id="CorreoEmpleadoMod" type="text" class="form-control">
+
+                                <label for="ContraEmpleadoMod" class="form-label">Contraseña del Conductor</label>
+                                <input id="ContraEmpleadoMod" type="password" class="form-control">
+
+                                <label for="direccionEmpleadoMod" class="form-label">Dirección</label>
+                                <input id="direccionEmpleadoMod" type="text" class="form-control">
+
+                                <label for="telefonoEmpleadoMod" class="form-label">Teléfono</label>
+                                <input id="telefonoEmpleadoMod" type="number" class="form-control">
+
+                                <label for="DPIEmpleadoMod" class="form-label">DPI</label>
+                                <input id="DPIEmpleadoMod" type="number" class="form-control">
+
+                                <label for="FechaNEmpleadoMod" class="form-label">Fecha de Nacimiento</label>
+                                <input id="FechaNEmpleadoMod" type="datetime" class="form-control">
+
+                            </div>
+                            <button onclick="modificarEmpleado()" data-bs-dismiss="modal" type="button"
+                                class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="elimEmpleado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="elimEmpleadoLabel">Eliminar Conductor</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>¿Estas seguro de eliminar este Conductor?</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" data-bs-dismiss="modal" onclick="eliminarEmpleado()"
+                            class="btn btn-primary">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="agregarEmpleado" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="agregarEmpleadoLabel">Agregar Conductor</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombreEmpleadoAdd" class="form-label">Nombre</label>
+                                <input id="nombreEmpleadoAdd" type="text" class="form-control">
+
+                                <label for="apellidoEmpleadoAdd" class="form-label">Apellido</label>
+                                <input id="apellidoEmpleadoAdd" type="text" class="form-control">
+
+                                <label for="CorreoEmpleadoAdd" class="form-label">Correo electronico</label>
+                                <input id="CorreoEmpleadoAdd" type="text" class="form-control">
+
+                                <label for="ContraEmpleadoAdd" class="form-label">Contraseña del Conductor</label>
+                                <input id="ContraEmpleadoAdd" type="password" class="form-control">
+
+                                <label for="direccionEmpleadoAdd" class="form-label">Direccion</label>
+                                <input id="direccionEmpleadoAdd" type="text" class="form-control">
+
+                                <label for="telefonoEmpleadoAdd" class="form-label">Telefono</label>
+                                <input id="telefonoEmpleadoAdd" type="number" class="form-control">
+
+                                <label for="DPIEmpleadoAdd" class="form-label">DPI</label>
+                                <input id="DPIEmpleadoAdd" type="number" class="form-control">
+
+                                <label for="FechaNEmpleadoAdd" class="form-label">Fecha de Nacimiento</label>
+                                <input id="FechaNEmpleadoAdd" type="datetime" class="form-control">
+
+                            </div>
+                            <button onclick="agregarEmpleado()" data-bs-dismiss="modal" type="button"
+                                class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/conductor.js"></script>
+
+
+</html>
